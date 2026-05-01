@@ -1,0 +1,72 @@
+.container {
+    --background: #dfdbdb;
+}
+
+.wraper-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h2 {
+    color: #0e23d8;
+    font-weight: 600;
+}
+
+.textos {
+    text-align: center;
+}
+
+.card {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 98%;
+}
+
+.group-input {
+    margin-bottom: 20px;
+
+    p {
+        color: #000000;
+    }
+}
+
+.wraper-container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton {
+    width: 60%;
+    height: 40px;
+    margin: 10px 0 10px 0;
+    border-radius: 25px;
+    overflow: hidden;
+    display: block;
+
+    font-weight: 600;
+    --background: #8E24AA;
+    --color: #fff;
+}
+
+.error-msg {
+    font-size: 0.85rem;
+    margin: 4px 0 0 16px;
+    display: block;
+}
+
+ion-item.ion-invalid.ion-touched {
+    --border-color: var(--ion-color-danger);
+
+    &::part(native) {
+        --highlight-background: var(--ion-color-danger);
+    }
+}
+
+ion-button:disabled {
+    --opacity: 0.6;
+    --background: var(--ion-color-medium-tint);
+}

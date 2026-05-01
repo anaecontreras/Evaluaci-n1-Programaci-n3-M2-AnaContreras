@@ -1,17 +1,55 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="container">
+  <div class="wraper-container">
+    <ion-text>
+      <h2>Información Personal</h2>
+    </ion-text>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-img class="img-personal" src="../../assets/foto.jpeg"
+      alt="The Wisconsin State Capitol building in Madison, WI at night">
+    </ion-img>
+    <ion-text class="textos">
+      <p class="nombre">Ana Contreras</p>
+      <p class="descripcion">Estudiante del tercer Trayecto</p>
+      <p class="descripcion">Ingeniería en Informática</p>
+      <p class="descripcion">Universidad Nacional Experimental de las Telecomunicaciones e Informática</p>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <p class="profesion">Desarrolladora de Software, Front-end, Back-end y UX/UI</p>
+
+      <div class="tecnologias">
+        <p>ReactJS</p>
+        <p>PHP</p>
+        <p>Laravel</p>
+        <p>PostgreSQL</p>
+      </div>
+    </ion-text>
+
+    <ion-card class="datos-contacto">
+      <ion-card-content>
+        <ion-text>
+          <div class="wraper-info">
+            <ion-icon aria-hidden="true" name="mail-outline"></ion-icon>
+            <div class="container-info">
+              <p>Correo Electrónico</p>
+              <p>anacontreras2508@gmail.com</p>
+            </div>
+          </div>
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="datos-contacto">
+      <ion-card-content>
+        <ion-text>
+          <div class="wraper-info">
+            <ion-icon aria-hidden="true" name="location-outline"></ion-icon>
+            <div class="container-info">
+              <p>Ubicación</p>
+              <p>Caracas, Venezuela</p>
+            </div>
+          </div>
+        </ion-text>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
 </ion-content>

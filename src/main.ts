@@ -5,6 +5,16 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
+import { addIcons } from 'ionicons';
+import { homeOutline, personOutline, mailOutline, locationOutline } from 'ionicons/icons';
+
+addIcons({
+  'home-outline': homeOutline,
+  'person-outline': personOutline,
+  'mail-outline': mailOutline,
+  'location-outline': locationOutline,
+});
+
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

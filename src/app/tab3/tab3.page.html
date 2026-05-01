@@ -1,17 +1,86 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="container">
+  <div class="wraper-container">
+    <ion-text class="textos">
+      <h2>Contáctanos</h2>
+      <p>Envíame un mensaje y te responderé lo antes posible</p>
+    </ion-text>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-card class="card">
+      <ion-card-content>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+          <!-- Nombre -->
+          <div class="group-input">
+            <p>Nombre completo</p>
+            <ion-item [class.ion-invalid]="hasError('nombre', 'required') || hasError('nombre', 'minlength')"
+              [class.ion-touched]="contactForm.get('nombre')?.touched">
+              <ion-input formControlName="nombre" placeholder="Tu Nombre" type="text" autocomplete="name">
+              </ion-input>
+            </ion-item>
+            @if (hasError('nombre', 'required')) {
+            <ion-text color="danger" class="error-msg">
+              <p>El nombre es obligatorio</p>
+            </ion-text>
+            }
+            @if (hasError('nombre', 'minlength')) {
+            <ion-text color="danger" class="error-msg">
+              <p>Mínimo 3 caracteres</p>
+            </ion-text>
+            }
+          </div>
+
+          <!-- Correo -->
+          <div class="group-input">
+            <p>Correo</p>
+            <ion-item [class.ion-invalid]="hasError('correo', 'required') || hasError('correo', 'email')"
+              [class.ion-touched]="contactForm.get('correo')?.touched">
+              <ion-input formControlName="correo" placeholder="ejemplo@correo.com" type="email" autocomplete="email">
+              </ion-input>
+            </ion-item>
+            @if (hasError('correo', 'required')) {
+            <ion-text color="danger" class="error-msg">
+              <p>El correo es obligatorio</p>
+            </ion-text>
+            }
+            @if (hasError('correo', 'email')) {
+            <ion-text color="danger" class="error-msg">
+              <p>Ingresa un correo válido</p>
+            </ion-text>
+            }
+          </div>
+
+          <!-- Mensaje -->
+          <div class="group-input">
+            <p>Mensaje</p>
+            <ion-item [class.ion-invalid]="hasError('mensaje', 'required') || hasError('mensaje', 'minlength')"
+              [class.ion-touched]="contactForm.get('mensaje')?.touched">
+              <ion-textarea formControlName="mensaje" placeholder="¿Dinos qué necesitas?" rows="4" autoGrow>
+              </ion-textarea>
+            </ion-item>
+            @if (hasError('mensaje', 'required')) {
+            <ion-text color="danger" class="error-msg">
+              <p>El mensaje es obligatorio</p>
+            </ion-text>
+            }
+            @if (hasError('mensaje', 'minlength')) {
+            <ion-text color="danger" class="error-msg">
+              <p>Mínimo 10 caracteres</p>
+            </ion-text>
+            }
+          </div>
+
+          <!-- Botón de envío -->
+          <div class="wraper-container-button">
+            <ion-button class="boton" type="submit" [disabled]="contactForm.invalid || contactForm.pending"
+              expand="block">
+              Enviar Mensaje
+            </ion-button>
+          </div>
+
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-toast></ion-toast>
 </ion-content>

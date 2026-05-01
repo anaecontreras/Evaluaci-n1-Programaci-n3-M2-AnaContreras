@@ -34,4 +34,34 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+// @import '@ionic/angular/css/palettes/dark.system.css';
+
+ion-tab-button.active-tab {
+    --color-selected: var(--ion-color-primary);
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 24px;
+        height: 3px;
+        background: var(--ion-color-primary);
+        border-radius: 2px;
+        transition: width 0.2s ease, background-color 0.2s ease;
+    }
+
+    @media (hover: hover) {
+        &:hover::after {
+            width: 32px;
+        }
+    }
+}
+
+/* Nos aseguramos que el pseudo-elemento no interfiera con clicks */
+ion-tab-button {
+    position: relative;
+    overflow: visible;
+    /* Esto permite que el marcador sobresalga si es necesario */
+}

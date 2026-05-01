@@ -1,17 +1,88 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="wraper-container">
+    <ion-card class="card card-principal">
+      <ion-card-header>
+        <ion-card-title class="titulo-principal">¡ Bienvenido !</ion-card-title>
+        <ion-card-subtitle class="sub-titulo">Control de Tareas Pendientes</ion-card-subtitle>
+      </ion-card-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      <ion-card-content>
+        Hoy tienes 4 tareas pendientes por realizar.
+      </ion-card-content>
+
+      <div class="wraper-container-button">
+        <ion-button class="boton" (click)="setOpen(true)">Visualizar Tareas</ion-button>
+      </div>
+    </ion-card>
+
+    <ion-modal [isOpen]="isModalOpen">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar class="titulo-modal">
+            <ion-title>Tareas Pendientes</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-list>
+            <ion-item class="item-modal">
+              <ion-thumbnail slot="start">
+                <img alt="Silhouette of mountains" src="../../assets/check.svg" />
+              </ion-thumbnail>
+              <ion-label>Desarrollar aplicación con Ionic</ion-label>
+            </ion-item>
+
+            <ion-item class="item-modal">
+              <ion-thumbnail slot="start">
+                <img alt="Silhouette of mountains" src="../../assets/check.svg" />
+              </ion-thumbnail>
+              <ion-label>Esperar Fecha de Entrega</ion-label>
+            </ion-item>
+
+            <ion-item class="item-modal">
+              <ion-thumbnail slot="start">
+                <img alt="Silhouette of mountains" src="../../assets/check.svg" />
+              </ion-thumbnail>
+              <ion-label>Cargar Tarea en Plataforma</ion-label>
+            </ion-item>
+
+            <ion-item lines="none" class="item-modal">
+              <ion-thumbnail slot="start">
+                <img alt="Silhouette of mountains" src="../../assets/check.svg" />
+              </ion-thumbnail>
+              <ion-label>Esperar Nota de la Actividad</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </div>
+
+  <div class="wraper-container">
+    <ion-card class="card card-secundaria">
+      <ion-card-header>
+        <ion-card-title class="titulo-principal">Resumen Semanal</ion-card-title>
+        <ion-card-subtitle class="sub-titulo">Haz completado el 90% de tus tareas semanales</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <div class="wraper-container">
+    <ion-text class="text-label">
+      <h3>Tus Intereses</h3>
+    </ion-text>
+
+    <ion-card class="card card-terciaria">
+      <ion-img class="banner-img" src="../../assets/banner-uneti.jpg"
+        alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+      <ion-card-header>
+        <ion-card-title class="titulo-principal">Evaluación 1</ion-card-title>
+        <ion-card-subtitle class="sub-titulo">Crear aplicación con Ionic que contenga tres menus. </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+
 </ion-content>
