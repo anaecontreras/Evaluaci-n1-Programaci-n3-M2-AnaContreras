@@ -1,10 +1,10 @@
-import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { ToastController } from '@ionic/angular/standalone';
+import { Component, inject } from '@angular/core'; // AGREGUÉ INJECT PARA USARLO DIRECTAMENTE AQUÍ
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms'; // IMPORTO LO DEL FORMULARIO CON VALIDACIONES
+import { ToastController } from '@ionic/angular/standalone'; // IMPORTO LOS MENSAJITOS EMERGENTES
 import {
   IonContent, IonText, IonCard, IonCardContent,
   IonItem, IonInput, IonTextarea, IonButton, IonToast
-} from '@ionic/angular/standalone';
+} from '@ionic/angular/standalone'; // IMPORTO LOS COMPONENTES VISUALES NUEVOS
 
 @Component({
   selector: 'app-tab3',
@@ -12,30 +12,30 @@ import {
   styleUrls: ['tab3.page.scss'],
   standalone: true,
   imports: [
-    ReactiveFormsModule,
+    ReactiveFormsModule, // NECESARIO PARA QUE FUNCIONEN LOS FORMULARIOS REACTIVOS
     IonContent, IonText, IonCard, IonCardContent,
-    IonItem, IonInput, IonTextarea, IonButton, IonToast
+    IonItem, IonInput, IonTextarea, IonButton, IonToast // COMPONENTES QUE AGREGUÉ A ESTA PÁGINA
   ]
 })
 export class Tab3Page {
-  private fb = inject(FormBuilder);
-  private toastController = inject(ToastController);
+  private fb = inject(FormBuilder); // HERRAMIENTA PARA CREAR EL FORMULARIO
+  private toastController = inject(ToastController); // HERRAMIENTA PARA MOSTRAR TOASTS
 
-  // Defino el formulario con validadores
+  // ARMO EL FORMULARIO DE CONTACTO CON SUS REGLAS
   contactForm = this.fb.group({
     nombre: ['', [Validators.required, Validators.minLength(3)]],
     correo: ['', [Validators.required, Validators.email]],
     mensaje: ['', [Validators.required, Validators.minLength(10)]]
   });
 
-  // Método para mostrar el toast de confirmación
+  // MUESTRO EL MENSAJE DE QUE SE ENVIÓ TODO BIEN
   async showSuccessToast(correo: string) {
     const toast = await this.toastController.create({
       message: `Mensaje enviado a: ${correo}`,
-      duration: 4000, // 4 segundos
-      position: 'bottom', // 'top', 'middle' o 'bottom'
-      color: 'success', // 'primary', 'danger', etc.
-      icon: 'checkmark-circle', // Icono opcional
+      duration: 4000,
+      position: 'bottom',
+      color: 'success',
+      icon: 'checkmark-circle',
       buttons: [
         {
           text: 'Cerrar',
@@ -47,23 +47,23 @@ export class Tab3Page {
   }
 
   async onSubmit() {
-    // Marcar todos los campos como "touched" para mostrar errores si están vacíos
+    // REVISO SI HAY ERRORES Y LOS MUESTRO
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
     }
 
-    // ✅ Obtener datos del formulario
+    // SACO LO QUE ESCRIBIÓ EL USUARIO
     const { nombre, correo, mensaje } = this.contactForm.value;
 
-    // 🎯 Mostrar toast de confirmación con el correo ingresado
+    // MUESTRO EL MENSAJE DE CONFIRMACIÓN
     await this.showSuccessToast(correo!);
 
-    // Opcional: resetear formulario después de enviar
+    // LIMPIO EL FORMULARIO PARA DEJARLO VACÍO
     this.contactForm.reset();
   }
 
-  // Helper para verificar errores (limpia el template)
+  // ME DICE SI UN CAMPO TIENE UN ERROR ESPECÍFICO
   hasError(field: string, errorType: string): boolean {
     const control = this.contactForm.get(field);
     return !!(control?.invalid && (control?.dirty || control?.touched) && control?.hasError(errorType));

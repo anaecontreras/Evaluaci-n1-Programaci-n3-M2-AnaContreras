@@ -1,4 +1,5 @@
 <ion-content [fullscreen]="true">
+  <!-- CAJA CON LA CARD DE BIENVENIDA Y EL BOTON -->
   <div class="wraper-container">
     <ion-card class="card card-principal">
       <ion-card-header>
@@ -15,6 +16,7 @@
       </div>
     </ion-card>
 
+    <!-- VENTANA EMERGENTE CON LA LISTA DE TAREAS -->
     <ion-modal [isOpen]="isModalOpen">
       <ng-template>
         <ion-header>
@@ -60,6 +62,7 @@
     </ion-modal>
   </div>
 
+  <!-- CAJA DEL RESUMEN SEMANAL -->
   <div class="wraper-container">
     <ion-card class="card card-secundaria">
       <ion-card-header>
@@ -69,20 +72,20 @@
     </ion-card>
   </div>
 
+  <!-- CAJA DE LOS INTERESES -->
   <div class="wraper-container">
     <ion-text class="text-label">
       <h3>Tus Intereses</h3>
     </ion-text>
 
+    <!-- CARD CON LA IMAGEN DE LA EVALUACION -->
     <ion-card class="card card-terciaria">
       <ion-img class="banner-img" src="../../assets/banner-uneti.jpg"
-        alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+        alt="banner de la materia de programación III"></ion-img>
       <ion-card-header>
         <ion-card-title class="titulo-principal">Evaluación 1</ion-card-title>
         <ion-card-subtitle class="sub-titulo">Crear aplicación con Ionic que contenga tres menus. </ion-card-subtitle>
       </ion-card-header>
     </ion-card>
   </div>
-
-
 </ion-content>

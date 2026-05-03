@@ -1,15 +1,19 @@
 <ion-content [fullscreen]="true" class="container">
+  <!-- ENVUELVE TODO EL CONTENIDO -->
   <div class="wraper-container">
+    <!-- TITULO DE LA PAGINA -->
     <ion-text class="textos">
       <h2>Contáctanos</h2>
       <p>Envíame un mensaje y te responderé lo antes posible</p>
     </ion-text>
 
+    <!-- TARJETA CON EL FORMULARIO -->
     <ion-card class="card">
       <ion-card-content>
+        <!-- FORMULARIO PARA CONTACTAR -->
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
-          <!-- Nombre -->
+          <!-- INPUT DEL NOMBRE -->
           <div class="group-input">
             <p>Nombre completo</p>
             <ion-item [class.ion-invalid]="hasError('nombre', 'required') || hasError('nombre', 'minlength')"
@@ -29,7 +33,7 @@
             }
           </div>
 
-          <!-- Correo -->
+          <!-- INPUT DEL CORREO -->
           <div class="group-input">
             <p>Correo</p>
             <ion-item [class.ion-invalid]="hasError('correo', 'required') || hasError('correo', 'email')"
@@ -49,7 +53,7 @@
             }
           </div>
 
-          <!-- Mensaje -->
+          <!-- INPUT DEL MENSAJE -->
           <div class="group-input">
             <p>Mensaje</p>
             <ion-item [class.ion-invalid]="hasError('mensaje', 'required') || hasError('mensaje', 'minlength')"
@@ -69,7 +73,7 @@
             }
           </div>
 
-          <!-- Botón de envío -->
+          <!-- BOTON PARA ENVIAR -->
           <div class="wraper-container-button">
             <ion-button class="boton" type="submit" [disabled]="contactForm.invalid || contactForm.pending"
               expand="block">
@@ -82,5 +86,6 @@
     </ion-card>
   </div>
 
+  <!-- TOAST PARA NOTIFICACIONES -->
   <ion-toast></ion-toast>
 </ion-content>

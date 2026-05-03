@@ -1,3 +1,4 @@
+/* ESTILO QUE CENTRA LOS ELEMENTOS EN COLUMNA */
 .wraper-container {
     display: flex;
     flex-direction: column;
@@ -5,10 +6,12 @@
     align-items: center;
 }
 
+/* ANCHO DE LAS TARJETAS */
 .card {
     width: 90%;
 }
 
+/* TARJETA CON FONDO DEGRADADO */
 .card-principal {
     margin: 20px 0;
 
@@ -25,6 +28,7 @@
     }
 }
 
+/* TARJETA CON FONDO DEGRADADO CLARITO */
 .card-secundaria {
     margin: 20px 0;
 
@@ -44,7 +48,7 @@
     }
 }
 
-
+/* TARJETA CON FONDO BLANCO */
 .card-terciaria {
     border-radius: 10px;
 
@@ -60,12 +64,14 @@
     }
 }
 
+/* CENTRA EL BOTÓN */
 .wraper-container-button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* ESTILO DEL BOTÓN MORADO CON BORDES REDONDOS */
 .boton {
     width: 60%;
     height: 40px;
@@ -79,6 +85,7 @@
     --color: #fff;
 }
 
+/* IMAGEN QUE OCUPA TODO EL ANCHO */
 .banner-img {
     width: 100%;
     border-radius: 10px;
@@ -86,16 +93,19 @@
     display: block;
 }
 
+/* QUITA EL ESPACIO ALREDEDOR DEL TEXTO */
 .text-label {
     margin: 0;
     padding: 0;
 }
 
+/* COLOR DEL TÍTULO DENTRO DEL MODAL */
 .titulo-modal {
     color: #d8d2d2;
     --background: #c31432;
 }
 
+/* COLOR DE LOS CAMPOS DENTRO DEL MODAL */
 .item-modal {
     color: #000000;
     margin-bottom: 10px;

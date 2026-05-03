@@ -1,7 +1,9 @@
+/* CAMBIO EL COLOR DE FONDO DE LA PÁGINA */
 .container {
     --background: #dfdbdb;
 }
 
+/* CENTRO TODO EL CONTENIDO EN COLUMNA */
 .wraper-container {
     display: flex;
     flex-direction: column;
@@ -10,35 +12,42 @@
     padding: 40px 20px;
 }
 
+/* PONGO LOS TÍTULOS EN AZUL Y NEGRITA */
 h2 {
     color: #0e23d8;
     font-weight: 600;
 }
 
+/* CENTRO LOS TEXTOS */
 .textos {
     text-align: center;
 }
 
+/* DOY ESTILO A LAS TARJETAS */
 .card {
     margin-bottom: 10px;
     border-radius: 10px;
     width: 98%;
 }
 
+/* DEJO ESPACIO ENTRE CADA CAMPO */
 .group-input {
     margin-bottom: 20px;
 
+    /* PONGO LAS ETIQUETAS EN NEGRO */
     p {
         color: #000000;
     }
 }
 
+/* CENTRO EL BOTÓN */
 .wraper-container-button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* DOY FORMA Y COLOR MORADO AL BOTÓN */
 .boton {
     width: 60%;
     height: 40px;
@@ -52,12 +61,14 @@ h2 {
     --color: #fff;
 }
 
+/* HAGO PEQUEÑO EL MENSAJE DE ERROR */
 .error-msg {
     font-size: 0.85rem;
     margin: 4px 0 0 16px;
     display: block;
 }
 
+/* PONGO BORDE ROJO CUANDO EL CAMPO TIENE ERROR */
 ion-item.ion-invalid.ion-touched {
     --border-color: var(--ion-color-danger);
 
@@ -66,6 +77,7 @@ ion-item.ion-invalid.ion-touched {
     }
 }
 
+/* PONGO EL BOTÓN GRIS CUANDO ESTÁ DESHABILITADO */
 ion-button:disabled {
     --opacity: 0.6;
     --background: var(--ion-color-medium-tint);
